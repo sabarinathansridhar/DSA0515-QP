@@ -1,0 +1,21 @@
+
+import pandas as pd
+import numpy as np
+
+data = {
+    'A': [1, 2, np.nan, 4],
+    'B': [np.nan, 2, 3, 4],
+    'C': [5, 6, 7, np.nan],
+    'D': [np.nan, np.nan, np.nan, np.nan]
+}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+
+df_filled = df.apply(lambda col: col.fillna(col.mean()) if col.dtype != 'O' else col)
+
+df_cleaned = df_filled.dropna(axis=1, how='all')
+
+print("\nDataFrame after handling missing values:")
+print(df_cleaned)

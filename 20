@@ -1,0 +1,18 @@
+
+import pandas as pd
+
+data = {
+    'student_name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+    'grade': ['A', 'B', 'A+', 'B+', 'A']
+}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+
+substring = 'A'
+
+indices = df[df['student_name'].str.contains(substring, case=False, na=False)].index
+
+print(f"\nIndices of rows where the substring '{substring}' is present in 'student_name':")
+print(indices.tolist())

@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+filename = "test.txt"
+x = []
+y = []
+
+with open(filename, "r") as file:
+    for line in file:
+        values = line.split()
+        x.append(int(values[0]))  # First value is x
+        y.append(int(values[1]))  # Second value is y
+plt.plot(x, y, label="Line from file", color="green", marker="o")
+plt.xlabel("X Axis Label")
+plt.ylabel("Y Axis Label")
+plt.title("Line Plot from Text File")
+plt.legend()
+plt.show()

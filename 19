@@ -1,0 +1,9 @@
+import pandas as pd
+
+
+url = "https://raw.githubusercontent.com/datasets/alcohol-consumption/master/data/alcohol-consumption.csv"
+df = pd.read_csv(url)
+
+print("Shape of the dataset:", df.shape)
+
+print("\nColumn names in the dataset:", df.columns.tolist())

@@ -1,0 +1,41 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.tan(x)
+y4 = x ** 2
+
+plt.figure(figsize=(12, 8))
+
+plt.subplot(2, 2, 1)  # 2 rows, 2 columns, 1st subplot
+plt.plot(x, y1, color='blue', label='sin(x)')
+plt.title('Sine Function')
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+plt.legend()
+
+plt.subplot(2, 2, 2)  # 2 rows, 2 columns, 2nd subplot
+plt.plot(x, y2, color='red', label='cos(x)')
+plt.title('Cosine Function')
+plt.xlabel('x')
+plt.ylabel('cos(x)')
+plt.legend()
+
+plt.subplot(2, 2, 3)  # 2 rows, 2 columns, 3rd subplot
+plt.plot(x, y3, color='green', label='tan(x)')
+plt.title('Tangent Function')
+plt.xlabel('x')
+plt.ylabel('tan(x)')
+plt.legend()
+plt.ylim(-10, 10)  # Limit y-axis to avoid extreme values
+
+plt.subplot(2, 2, 4)  # 2 rows, 2 columns, 4th subplot
+plt.plot(x, y4, color='purple', label='x^2')
+plt.title('Quadratic Function')
+plt.xlabel('x')
+plt.ylabel('x^2')
+plt.legend()
+plt.tight_layout()
+plt.show()

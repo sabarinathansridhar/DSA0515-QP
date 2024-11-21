@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+filename = "fdata.csv"
+data = pd.read_csv(filename)
+data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%y')
+plt.figure(figsize=(10, 6))
+plt.plot(data['Date'], data['Open'], label='Open Price', marker='o', color='blue')
+plt.plot(data['Date'], data['High'], label='High Price', marker='o', color='green')
+plt.plot(data['Date'], data['Low'], label='Low Price', marker='o', color='red')
+plt.plot(data['Date'], data['Close'], label='Close Price', marker='o', color='purple')
+plt.xlabel('Date')
+plt.ylabel('Price')
+plt.title('Financial Data of Alphabet Inc. (Oct 3, 2016 - Oct 7, 2016)')
+plt.legend()
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()

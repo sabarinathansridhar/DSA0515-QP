@@ -1,0 +1,19 @@
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)  
+data = np.random.randn(10, 4)  
+df = pd.DataFrame(data, columns=["A", "B", "C", "D"])
+
+
+df.insert(0, "E", range(1, 11))
+
+
+def highlight_negatives(val):
+    color = 'red' if val < 0 else 'black'
+    return f'color: {color}'
+
+
+styled_df = df.style.applymap(highlight_negatives, subset=["A", "B", "C", "D"])
+
+styled_df

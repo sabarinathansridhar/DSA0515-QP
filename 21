@@ -1,0 +1,9 @@
+import pandas as pd
+data = {
+    "Name": ["Alice", "Bob", "CHARLIE", "david"],
+    "Age": [25, 30, 35, 40]
+}
+df = pd.DataFrame(data)
+df['Name'] = df['Name'].apply(lambda x: x.swapcase())
+print("DataFrame after swapping cases:")
+print(df)
